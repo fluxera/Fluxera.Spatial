@@ -1,0 +1,70 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31919.166
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".items", ".items", "{75AC41E9-2B8B-4D76-A7DF-A18F4FB9D6D6}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		azure-pipelines.yml = azure-pipelines.yml
+		GitVersion.yml = GitVersion.yml
+		global.json = global.json
+		icon.png = icon.png
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{DF28D730-99B3-4811-AAC7-725A73B3F668}"
+	ProjectSection(SolutionItems) = preProject
+		src\Directory.Build.props = src\Directory.Build.props
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{F18D2D58-282C-4D93-8D9A-3A76CF98F018}"
+	ProjectSection(SolutionItems) = preProject
+		tests\Directory.Build.props = tests\Directory.Build.props
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fluxera.Spatial", "src\Fluxera.Spatial\Fluxera.Spatial.csproj", "{EE22035C-7DF9-4945-858D-F6C735AC8F3C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fluxera.Spatial.UnitTests", "tests\Fluxera.Spatial.UnitTests\Fluxera.Spatial.UnitTests.csproj", "{0C549DAB-55AD-4524-8F1B-5925334878A5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fluxera.Spatial.JsonNet", "src\Fluxera.Spatial.JsonNet\Fluxera.Spatial.JsonNet.csproj", "{9B6156D6-2B48-486E-99F5-9B865308F573}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fluxera.Spatial.JsonNet.UnitTests", "tests\Fluxera.Spatial.JsonNet.UnitTests\Fluxera.Spatial.JsonNet.UnitTests.csproj", "{14DA4539-A6D0-448A-BC25-46FD575453DC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EE22035C-7DF9-4945-858D-F6C735AC8F3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE22035C-7DF9-4945-858D-F6C735AC8F3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE22035C-7DF9-4945-858D-F6C735AC8F3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE22035C-7DF9-4945-858D-F6C735AC8F3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C549DAB-55AD-4524-8F1B-5925334878A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C549DAB-55AD-4524-8F1B-5925334878A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C549DAB-55AD-4524-8F1B-5925334878A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C549DAB-55AD-4524-8F1B-5925334878A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B6156D6-2B48-486E-99F5-9B865308F573}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B6156D6-2B48-486E-99F5-9B865308F573}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B6156D6-2B48-486E-99F5-9B865308F573}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B6156D6-2B48-486E-99F5-9B865308F573}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14DA4539-A6D0-448A-BC25-46FD575453DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14DA4539-A6D0-448A-BC25-46FD575453DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14DA4539-A6D0-448A-BC25-46FD575453DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14DA4539-A6D0-448A-BC25-46FD575453DC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{EE22035C-7DF9-4945-858D-F6C735AC8F3C} = {DF28D730-99B3-4811-AAC7-725A73B3F668}
+		{0C549DAB-55AD-4524-8F1B-5925334878A5} = {F18D2D58-282C-4D93-8D9A-3A76CF98F018}
+		{9B6156D6-2B48-486E-99F5-9B865308F573} = {DF28D730-99B3-4811-AAC7-725A73B3F668}
+		{14DA4539-A6D0-448A-BC25-46FD575453DC} = {F18D2D58-282C-4D93-8D9A-3A76CF98F018}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D97BF2AF-6E68-4E88-BF70-773A86E26013}
+	EndGlobalSection
+EndGlobal

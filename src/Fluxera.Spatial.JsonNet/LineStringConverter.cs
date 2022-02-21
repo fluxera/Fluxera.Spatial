@@ -1,0 +1,73 @@
+namespace Fluxera.Spatial.JsonNet
+{
+	using System;
+	using System.Collections.Generic;
+	using System.Linq;
+	using Newtonsoft.Json;
+	using Newtonsoft.Json.Linq;
+
+	internal sealed class LineStringConverter : JsonConverter<LineString>
+	{
+		/// <inheritdoc />
+		public override void WriteJson(JsonWriter writer, LineString value, JsonSerializer serializer)
+		{
+			writer.WriteStartObject();
+
+			writer.WritePropertyName("type");
+			writer.WriteValue("LineString");
+
+			writer.WritePropertyName("coordinates");
+			writer.WriteStartArray();
+
+			foreach(Position position in value.Coordinates)
+			{
+				serializer.Converters
+					.Single(x => x is PositionConverter)
+					.WriteJson(writer, position, serializer);
+			}
+
+			writer.WriteEndArray();
+
+			writer.WriteEndObject();
+		}
+
+		/// <inheritdoc />
+		public override LineString ReadJson(JsonReader reader, Type objectType, LineString existingValue, bool hasExistingValue, JsonSerializer serializer)
+		{
+			if(reader.TokenType == JsonToken.StartObject)
+			{
+				JObject item = JObject.Load(reader);
+
+				if(item.ContainsKey("type"))
+				{
+					string type = item["type"]!.Value<string>()!;
+					if(type == "LineString")
+					{
+						if(item.ContainsKey("coordinates"))
+						{
+							JToken jToken = item["coordinates"]!;
+							if(jToken.Type == JTokenType.Array)
+							{
+								JArray jArray = (JArray)jToken;
+
+								IList<Position> positions = new List<Position>();
+								foreach(JToken token in jArray)
+								{
+									Position position = (Position)serializer.Converters
+										.Single(x => x is PositionConverter)
+										.ReadJson(token.CreateReader(), typeof(Position), Position.Empty, serializer)!;
+
+									positions.Add(position);
+								}
+
+								return new LineString(positions);
+							}
+						}
+					}
+				}
+			}
+
+			return LineString.Empty;
+		}
+	}
+}
