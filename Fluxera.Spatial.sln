@@ -32,6 +32,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fluxera.Spatial.JsonNet", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fluxera.Spatial.JsonNet.UnitTests", "tests\Fluxera.Spatial.JsonNet.UnitTests\Fluxera.Spatial.JsonNet.UnitTests.csproj", "{14DA4539-A6D0-448A-BC25-46FD575453DC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fluxera.Spatial.SystemTextJson", "src\Fluxera.Spatial.SystemTextJson\Fluxera.Spatial.SystemTextJson.csproj", "{87604E3D-91E4-4BCB-866F-E8CFCFE32ABB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fluxera.Spatial.SystemTextJson.UnitTests", "tests\Fluxera.Spatial.SystemTextJson.UnitTests\Fluxera.Spatial.SystemTextJson.UnitTests.csproj", "{58EB5574-034F-46C4-BA44-6D8FAD667C30}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -54,6 +58,14 @@ Global
 		{14DA4539-A6D0-448A-BC25-46FD575453DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{14DA4539-A6D0-448A-BC25-46FD575453DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{14DA4539-A6D0-448A-BC25-46FD575453DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87604E3D-91E4-4BCB-866F-E8CFCFE32ABB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87604E3D-91E4-4BCB-866F-E8CFCFE32ABB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87604E3D-91E4-4BCB-866F-E8CFCFE32ABB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87604E3D-91E4-4BCB-866F-E8CFCFE32ABB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58EB5574-034F-46C4-BA44-6D8FAD667C30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58EB5574-034F-46C4-BA44-6D8FAD667C30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58EB5574-034F-46C4-BA44-6D8FAD667C30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58EB5574-034F-46C4-BA44-6D8FAD667C30}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -63,6 +75,8 @@ Global
 		{0C549DAB-55AD-4524-8F1B-5925334878A5} = {F18D2D58-282C-4D93-8D9A-3A76CF98F018}
 		{9B6156D6-2B48-486E-99F5-9B865308F573} = {DF28D730-99B3-4811-AAC7-725A73B3F668}
 		{14DA4539-A6D0-448A-BC25-46FD575453DC} = {F18D2D58-282C-4D93-8D9A-3A76CF98F018}
+		{87604E3D-91E4-4BCB-866F-E8CFCFE32ABB} = {DF28D730-99B3-4811-AAC7-725A73B3F668}
+		{58EB5574-034F-46C4-BA44-6D8FAD667C30} = {F18D2D58-282C-4D93-8D9A-3A76CF98F018}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D97BF2AF-6E68-4E88-BF70-773A86E26013}

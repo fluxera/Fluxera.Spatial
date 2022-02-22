@@ -1,18 +1,16 @@
-namespace Fluxera.Spatial.JsonNet.UnitTests
+namespace Fluxera.Spatial.UnitTests.Geometry
 {
 	using System;
 	using FluentAssertions;
-	using Newtonsoft.Json;
 	using NUnit.Framework;
 
-	[TestFixture]
-	public class PointTests : TestsBase<Point>
+	public abstract class PointTestsBase : TestsBase<Point>
 	{
 		[Test]
 		public void ShouldDeserialize()
 		{
 			Point expected = new Point(new Position(8.8057381, 53.0760221));
-			Point actual = JsonConvert.DeserializeObject<Point>(this.GetJson("WithoutAltitude"));
+			Point actual = this.Deserialize("WithoutAltitude");
 
 			Console.WriteLine(expected);
 			Console.WriteLine(actual);
@@ -25,7 +23,7 @@ namespace Fluxera.Spatial.JsonNet.UnitTests
 		public void ShouldDeserializeWithAltitude()
 		{
 			Point expected = new Point(new Position(8.8057381, 53.0760221, 105.5));
-			Point actual = JsonConvert.DeserializeObject<Point>(this.GetJson("WithAltitude"));
+			Point actual = this.Deserialize("WithAltitude");
 
 			Console.WriteLine(expected);
 			Console.WriteLine(actual);
@@ -40,7 +38,7 @@ namespace Fluxera.Spatial.JsonNet.UnitTests
 			Point point = new Point(new Position(8.8057381, 53.0760221));
 
 			string expected = this.GetJson("WithoutAltitude");
-			string actual = JsonConvert.SerializeObject(point);
+			string actual = this.Serialize(point);
 
 			Console.WriteLine(expected);
 			Console.WriteLine(actual);
@@ -54,7 +52,7 @@ namespace Fluxera.Spatial.JsonNet.UnitTests
 			Point point = new Point(new Position(8.8057381, 53.0760221, 105.5));
 
 			string expected = this.GetJson("WithAltitude");
-			string actual = JsonConvert.SerializeObject(point);
+			string actual = this.Serialize(point);
 
 			Console.WriteLine(expected);
 			Console.WriteLine(actual);

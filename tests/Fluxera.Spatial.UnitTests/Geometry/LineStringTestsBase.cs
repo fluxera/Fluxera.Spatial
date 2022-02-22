@@ -1,16 +1,15 @@
-namespace Fluxera.Spatial.JsonNet.UnitTests
+namespace Fluxera.Spatial.UnitTests.Geometry
 {
 	using System;
 	using System.Collections.Generic;
 	using FluentAssertions;
-	using Newtonsoft.Json;
 	using NUnit.Framework;
 
 	[TestFixture]
-	public class MultiPointTests : TestsBase<MultiPoint>
+	public abstract class LineStringTestsBase : TestsBase<LineString>
 	{
 		[Test]
-		public void ShouldDeserialize()
+		public void ShouldDeserializeNotClosed()
 		{
 			IList<Point> points = new List<Point>
 			{
@@ -20,18 +19,18 @@ namespace Fluxera.Spatial.JsonNet.UnitTests
 				new Point(new Position(8.8556994, 53.1103679))
 			};
 
-			MultiPoint expected = new MultiPoint(points);
-			MultiPoint actual = JsonConvert.DeserializeObject<MultiPoint>(this.GetJson("Default"));
+			LineString expected = new LineString(points);
+			LineString actual = this.Deserialize("NotClosed");
 
 			Console.WriteLine(expected);
 			Console.WriteLine(actual);
 
-			actual.Should().NotBe(MultiPoint.Empty);
+			actual.Should().NotBe(LineString.Empty);
 			actual.Should().Be(expected);
 		}
 
 		[Test]
-		public void ShouldSerialize()
+		public void ShouldSerializeNotClosed()
 		{
 			IList<Point> points = new List<Point>
 			{
@@ -41,10 +40,10 @@ namespace Fluxera.Spatial.JsonNet.UnitTests
 				new Point(new Position(8.8556994, 53.1103679))
 			};
 
-			MultiPoint multiPoint = new MultiPoint(points);
+			LineString lineString = new LineString(points);
 
-			string expected = this.GetJson("Default");
-			string actual = JsonConvert.SerializeObject(multiPoint);
+			string expected = this.GetJson("NotClosed");
+			string actual = this.Serialize(lineString);
 
 			Console.WriteLine(expected);
 			Console.WriteLine(actual);

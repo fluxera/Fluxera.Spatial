@@ -1,13 +1,11 @@
-namespace Fluxera.Spatial.JsonNet.UnitTests
+namespace Fluxera.Spatial.UnitTests.Geometry
 {
 	using System;
 	using System.Collections.Generic;
 	using FluentAssertions;
-	using Newtonsoft.Json;
 	using NUnit.Framework;
 
-	[TestFixture]
-	public class MultiLineStringTests : TestsBase<MultiLineString>
+	public abstract class MultiLineStringTestsBase : TestsBase<MultiLineString>
 	{
 		[Test]
 		public void ShouldDeserialize()
@@ -29,7 +27,7 @@ namespace Fluxera.Spatial.JsonNet.UnitTests
 			});
 
 			MultiLineString expected = new MultiLineString(lineString0, lineString1);
-			MultiLineString actual = JsonConvert.DeserializeObject<MultiLineString>(this.GetJson("Default"));
+			MultiLineString actual = this.Deserialize("Default");
 
 			Console.WriteLine(expected);
 			Console.WriteLine(actual);
@@ -60,7 +58,7 @@ namespace Fluxera.Spatial.JsonNet.UnitTests
 			MultiLineString multiLineString = new MultiLineString(lineString0, lineString1);
 
 			string expected = this.GetJson("Default");
-			string actual = JsonConvert.SerializeObject(multiLineString);
+			string actual = this.Serialize(multiLineString);
 
 			Console.WriteLine(expected);
 			Console.WriteLine(actual);

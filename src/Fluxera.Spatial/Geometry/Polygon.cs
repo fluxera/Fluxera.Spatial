@@ -65,7 +65,12 @@ namespace Fluxera.Spatial
 		/// <inheritdoc />
 		public override bool Equals(object obj)
 		{
-			return this == (Polygon)obj;
+			if(obj is not Polygon polygon)
+			{
+				return false;
+			}
+
+			return this == polygon;
 		}
 
 		/// <inheritdoc />

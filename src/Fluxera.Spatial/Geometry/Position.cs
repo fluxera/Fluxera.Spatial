@@ -58,7 +58,12 @@ namespace Fluxera.Spatial
 		/// <inheritdoc />
 		public override bool Equals(object obj)
 		{
-			return this == (Position)obj;
+			if(obj is not Position position)
+			{
+				return false;
+			}
+
+			return this == position;
 		}
 
 		/// <inheritdoc />

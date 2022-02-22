@@ -1,9 +1,8 @@
-namespace Fluxera.Spatial.JsonNet.UnitTests
+namespace Fluxera.Spatial.UnitTests
 {
 	using System;
 	using System.IO;
 	using System.Reflection;
-	using Newtonsoft.Json;
 	using NUnit.Framework;
 
 	public abstract class TestsBase<T>
@@ -15,15 +14,7 @@ namespace Fluxera.Spatial.JsonNet.UnitTests
 		[SetUp]
 		public void Setup()
 		{
-			JsonConvert.DefaultSettings = () =>
-			{
-				JsonSerializerSettings settings = new JsonSerializerSettings
-				{
-					Formatting = Formatting.Indented,
-				};
-				settings.UseSpatial();
-				return settings;
-			};
+			this.OnSetup();
 		}
 
 		protected string GetJson(string name)
@@ -41,7 +32,18 @@ namespace Fluxera.Spatial.JsonNet.UnitTests
 				}
 			}
 
+			return this.ModifyJson(json);
+		}
+
+		protected virtual string ModifyJson(string json)
+		{
 			return json.Replace("\t", "  ");
 		}
+
+		protected abstract void OnSetup();
+
+		protected abstract T Deserialize(string jsonName);
+
+		protected abstract string Serialize(T obj);
 	}
 }

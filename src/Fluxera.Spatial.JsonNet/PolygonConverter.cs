@@ -7,15 +7,15 @@ namespace Fluxera.Spatial.JsonNet
 	using Newtonsoft.Json.Linq;
 
 	[PublicAPI]
-	public sealed class MultiLineStringConverter : JsonConverter<MultiLineString>
+	public sealed class PolygonConverter : JsonConverter<Polygon>
 	{
 		/// <inheritdoc />
-		public override void WriteJson(JsonWriter writer, MultiLineString value, JsonSerializer serializer)
+		public override void WriteJson(JsonWriter writer, Polygon value, JsonSerializer serializer)
 		{
 			writer.WriteStartObject();
 
 			writer.WritePropertyName("type");
-			writer.WriteValue("MultiLineString");
+			writer.WriteValue("Polygon");
 
 			writer.WritePropertyName("coordinates");
 			writer.WriteStartArray();
@@ -38,7 +38,7 @@ namespace Fluxera.Spatial.JsonNet
 		}
 
 		/// <inheritdoc />
-		public override MultiLineString ReadJson(JsonReader reader, Type objectType, MultiLineString existingValue, bool hasExistingValue, JsonSerializer serializer)
+		public override Polygon ReadJson(JsonReader reader, Type objectType, Polygon existingValue, bool hasExistingValue, JsonSerializer serializer)
 		{
 			if(reader.TokenType == JsonToken.StartObject)
 			{
@@ -47,7 +47,7 @@ namespace Fluxera.Spatial.JsonNet
 				if(item.ContainsKey("type"))
 				{
 					string type = item["type"]!.Value<string>()!;
-					if(type == "MultiLineString")
+					if(type == "Polygon")
 					{
 						if(item.ContainsKey("coordinates"))
 						{
@@ -72,14 +72,14 @@ namespace Fluxera.Spatial.JsonNet
 									lineStrings.Add(lineString);
 								}
 
-								return new MultiLineString(lineStrings);
+								return new Polygon(lineStrings);
 							}
 						}
 					}
 				}
 			}
 
-			return MultiLineString.Empty;
+			return Polygon.Empty;
 		}
 	}
 }

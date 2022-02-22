@@ -74,7 +74,12 @@ namespace Fluxera.Spatial
 		/// <inheritdoc />
 		public override bool Equals(object obj)
 		{
-			return this == (MultiPoint)obj;
+			if(obj is not MultiPoint multiPoint)
+			{
+				return false;
+			}
+
+			return this == multiPoint;
 		}
 
 		/// <inheritdoc />

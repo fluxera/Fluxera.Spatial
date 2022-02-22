@@ -1,11 +1,12 @@
 namespace Fluxera.Spatial.JsonNet
 {
 	using System;
-	using System.Linq;
+	using JetBrains.Annotations;
 	using Newtonsoft.Json;
 	using Newtonsoft.Json.Linq;
 
-	internal sealed class PointConverter : JsonConverter<Point>
+	[PublicAPI]
+	public sealed class PointConverter : JsonConverter<Point>
 	{
 		/// <inheritdoc />
 		public override void WriteJson(JsonWriter writer, Point value, JsonSerializer serializer)
@@ -16,9 +17,7 @@ namespace Fluxera.Spatial.JsonNet
 			writer.WriteValue("Point");
 
 			writer.WritePropertyName("coordinates");
-			serializer.Converters
-				.Single(x => x is PositionConverter)
-				.WriteJson(writer, value.Coordinates, serializer);
+			writer.WritePosition(value.Coordinates);
 
 			writer.WriteEndObject();
 		}
@@ -37,12 +36,9 @@ namespace Fluxera.Spatial.JsonNet
 					{
 						if(item.ContainsKey("coordinates"))
 						{
-							JToken jToken = item["coordinates"]!;
+							JToken coordinates = item["coordinates"]!;
 
-							Position position = (Position)serializer.Converters
-								.Single(x => x is PositionConverter)
-								.ReadJson(jToken.CreateReader(), typeof(Position), Position.Empty, serializer)!;
-
+							Position position = coordinates.CreateReader().ReadPosition();
 							return new Point(position);
 						}
 					}

@@ -20,7 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Fluxera.Spatial.JsonNet\Fluxera.Spatial.JsonNet.csproj" />
+    <ProjectReference Include="..\..\src\Fluxera.Spatial.SystemTextJson\Fluxera.Spatial.SystemTextJson.csproj" />
     <ProjectReference Include="..\Fluxera.Spatial.UnitTests\Fluxera.Spatial.UnitTests.csproj" />
   </ItemGroup>
 

@@ -1,12 +1,12 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<TargetFramework>netstandard2.1</TargetFramework>
 	</PropertyGroup>
 
 	<PropertyGroup>
-		<Title>Fluxera.Spatial.JsonNet</Title>
-		<Description>A libary that provides serialzer support for JSON.NET.</Description>
+		<Title>Fluxera.Spatial.SystemTextJson</Title>
+		<Description>A libary that provides serialzer support for System.Text.Json.</Description>
 		<PackageTags>fluxera;library;spatial,json</PackageTags>
 	</PropertyGroup>
 
@@ -27,11 +27,12 @@
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
 		<PackageReference Include="JetBrains.Annotations" Version="2021.3.0" />
-		<PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+		<PackageReference Include="System.Text.Json" Version="6.0.2" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\Fluxera.Spatial\Fluxera.Spatial.csproj" />
+		<ProjectReference Include="..\Fluxera.Spatial\Fluxera.Spatial.csproj" />
 	</ItemGroup>
+
 
 </Project>
