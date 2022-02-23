@@ -31,11 +31,11 @@ namespace Fluxera.Spatial.UnitTests.Geometry
 				}),
 				new LineString(new List<Position>
 				{
-					new Position(100.2, 0.2),
-					new Position(100.2, 0.8),
-					new Position(100.8, 0.8),
-					new Position(100.8, 0.2),
-					new Position(100.2, 0.2)
+					new Position(108.0, 8.0),
+					new Position(108.0, 2.0),
+					new Position(102.0, 2.0),
+					new Position(102.0, 8.0),
+					new Position(108.0, 8.0)
 				})
 			});
 
@@ -73,11 +73,11 @@ namespace Fluxera.Spatial.UnitTests.Geometry
 				}),
 				new LineString(new List<Position>
 				{
-					new Position(100.2, 0.2),
-					new Position(100.2, 0.8),
-					new Position(100.8, 0.8),
-					new Position(100.8, 0.2),
-					new Position(100.2, 0.2)
+					new Position(108.0, 8.0),
+					new Position(108.0, 2.0),
+					new Position(102.0, 2.0),
+					new Position(102.0, 8.0),
+					new Position(108.0, 8.0)
 				})
 			});
 

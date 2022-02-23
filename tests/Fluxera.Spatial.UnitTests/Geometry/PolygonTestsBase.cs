@@ -42,11 +42,11 @@ namespace Fluxera.Spatial.UnitTests.Geometry
 				}),
 				new LineString(new List<Position>
 				{
-					new Position(100.8, 0.8),
-					new Position(100.8, 0.2),
-					new Position(100.2, 0.2),
-					new Position(100.2, 0.8),
-					new Position(100.8, 0.8)
+					new Position(108.0, 8.0),
+					new Position(108.0, 2.0),
+					new Position(102.0, 2.0),
+					new Position(102.0, 8.0),
+					new Position(108.0, 8.0)
 				})
 			});
 			Polygon actual = this.Deserialize("WithHoles");
@@ -67,7 +67,7 @@ namespace Fluxera.Spatial.UnitTests.Geometry
 				new Position(101.0, 0.0),
 				new Position(101.0, 1.0),
 				new Position(100.0, 1.0),
-				new Position(100.0, 0.0),
+				new Position(100.0, 0.0)
 			}));
 
 			string expected = this.GetJson("NoHoles");
@@ -90,15 +90,15 @@ namespace Fluxera.Spatial.UnitTests.Geometry
 					new Position(101.0, 0.0),
 					new Position(101.0, 1.0),
 					new Position(100.0, 1.0),
-					new Position(100.0, 0.0),
+					new Position(100.0, 0.0)
 				}),
 				new LineString(new List<Position>
 				{
-					new Position(100.8, 0.8),
-					new Position(100.8, 0.2),
-					new Position(100.2, 0.2),
-					new Position(100.2, 0.8),
-					new Position(100.8, 0.8),
+					new Position(108.0, 8.0),
+					new Position(108.0, 2.0),
+					new Position(102.0, 2.0),
+					new Position(102.0, 8.0),
+					new Position(108.0, 8.0)
 				}),
 			});
 
