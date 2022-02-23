@@ -2,11 +2,12 @@ namespace Fluxera.Spatial.JsonNet
 {
 	using System;
 	using System.Collections.Generic;
-	using System.Linq;
+	using JetBrains.Annotations;
 	using Newtonsoft.Json;
 	using Newtonsoft.Json.Linq;
 
-	internal sealed class MultiLineStringConverter : JsonConverter<MultiLineString>
+	[PublicAPI]
+	public sealed class MultiLineStringConverter : JsonConverter<MultiLineString>
 	{
 		/// <inheritdoc />
 		public override void WriteJson(JsonWriter writer, MultiLineString value, JsonSerializer serializer)
@@ -25,9 +26,7 @@ namespace Fluxera.Spatial.JsonNet
 
 				foreach(Position position in lineString.Coordinates)
 				{
-					serializer.Converters
-						.Single(x => x is PositionConverter)
-						.WriteJson(writer, position, serializer);
+					writer.WritePosition(position);
 				}
 
 				writer.WriteEndArray();
@@ -65,10 +64,7 @@ namespace Fluxera.Spatial.JsonNet
 									IList<Position> positions = new List<Position>();
 									foreach(JToken token in innerArray)
 									{
-										Position position = (Position)serializer.Converters
-											.Single(x => x is PositionConverter)
-											.ReadJson(token.CreateReader(), typeof(Position), Position.Empty, serializer)!;
-
+										Position position = token.CreateReader().ReadPosition();
 										positions.Add(position);
 									}
 

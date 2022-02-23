@@ -94,6 +94,9 @@ namespace Fluxera.Spatial
 			}
 		}
 
+		/// <summary>
+		///     Gets the coordinates.
+		/// </summary>
 		public Position[] Coordinates { get; }
 
 		/// <summary>
@@ -106,7 +109,12 @@ namespace Fluxera.Spatial
 		/// <inheritdoc />
 		public override bool Equals(object obj)
 		{
-			return this == (LineString)obj;
+			if(obj is not LineString lineString)
+			{
+				return false;
+			}
+
+			return this == lineString;
 		}
 
 		/// <inheritdoc />
@@ -145,5 +153,8 @@ namespace Fluxera.Spatial
 		{
 			return !(left == right);
 		}
+
+		/// <inheritdoc />
+		public bool HasAltitude => this.Coordinates.Any(x => x.Altitude.HasValue);
 	}
 }

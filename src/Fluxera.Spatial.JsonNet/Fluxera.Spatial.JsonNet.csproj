@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<TargetFramework>netstandard2.1</TargetFramework>
@@ -6,8 +6,8 @@
 
 	<PropertyGroup>
 		<Title>Fluxera.Spatial.JsonNet</Title>
-		<Description>A libary that provides serialzer support for JSON.NET.</Description>
-		<PackageTags>fluxera;library;spatial,json;json.net</PackageTags>
+		<Description>A libary that provides serializer support for JSON.NET spatial types.</Description>
+		<PackageTags>fluxera;library;spatial,json</PackageTags>
 	</PropertyGroup>
 
 	<ItemGroup>

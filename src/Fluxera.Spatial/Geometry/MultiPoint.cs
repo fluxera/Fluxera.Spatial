@@ -74,7 +74,12 @@ namespace Fluxera.Spatial
 		/// <inheritdoc />
 		public override bool Equals(object obj)
 		{
-			return this == (MultiPoint)obj;
+			if(obj is not MultiPoint multiPoint)
+			{
+				return false;
+			}
+
+			return this == multiPoint;
 		}
 
 		/// <inheritdoc />
@@ -113,5 +118,8 @@ namespace Fluxera.Spatial
 		{
 			return !(left == right);
 		}
+
+		/// <inheritdoc />
+		public bool HasAltitude => this.Coordinates.Any(x => x.Altitude.HasValue);
 	}
 }

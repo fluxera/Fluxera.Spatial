@@ -52,7 +52,12 @@ namespace Fluxera.Spatial
 		/// <inheritdoc />
 		public override bool Equals(object obj)
 		{
-			return this == (MultiLineString)obj;
+			if(obj is not MultiLineString multiLineString)
+			{
+				return false;
+			}
+
+			return this == multiLineString;
 		}
 
 		/// <inheritdoc />
@@ -91,5 +96,8 @@ namespace Fluxera.Spatial
 		{
 			return !(left == right);
 		}
+
+		/// <inheritdoc />
+		public bool HasAltitude => this.Coordinates.Any(x => x.HasAltitude);
 	}
 }

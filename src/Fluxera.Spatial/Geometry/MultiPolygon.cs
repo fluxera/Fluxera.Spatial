@@ -36,6 +36,15 @@ namespace Fluxera.Spatial
 		}
 
 		/// <summary>
+		///     Create a new instance of the <see cref="MultiPolygon" /> type.
+		/// </summary>
+		/// <param name="coordinates"></param>
+		public MultiPolygon(params Polygon[] coordinates)
+		{
+			this.Coordinates = (coordinates ?? Enumerable.Empty<Polygon>()).ToArray();
+		}
+
+		/// <summary>
 		///     Gets the coordinates.
 		/// </summary>
 		public Polygon[] Coordinates { get; }
@@ -43,7 +52,12 @@ namespace Fluxera.Spatial
 		/// <inheritdoc />
 		public override bool Equals(object obj)
 		{
-			return this == (MultiPolygon)obj;
+			if(obj is not MultiPolygon multiPolygon)
+			{
+				return false;
+			}
+
+			return this == multiPolygon;
 		}
 
 		/// <inheritdoc />
@@ -82,5 +96,8 @@ namespace Fluxera.Spatial
 		{
 			return !(left == right);
 		}
+
+		/// <inheritdoc />
+		public bool HasAltitude => this.Coordinates.Any(x => x.HasAltitude);
 	}
 }

@@ -58,7 +58,12 @@ namespace Fluxera.Spatial
 		/// <inheritdoc />
 		public override bool Equals(object obj)
 		{
-			return this == (Position)obj;
+			if(obj is not Position position)
+			{
+				return false;
+			}
+
+			return this == position;
 		}
 
 		/// <inheritdoc />
@@ -96,5 +101,10 @@ namespace Fluxera.Spatial
 		{
 			return !(left == right);
 		}
+
+		/// <summary>
+		///     Gets if the position uses an altitude value.
+		/// </summary>
+		public bool HasAltitude => this.Altitude.HasValue;
 	}
 }

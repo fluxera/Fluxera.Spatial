@@ -65,7 +65,12 @@ namespace Fluxera.Spatial
 		/// <inheritdoc />
 		public override bool Equals(object obj)
 		{
-			return this == (Polygon)obj;
+			if(obj is not Polygon polygon)
+			{
+				return false;
+			}
+
+			return this == polygon;
 		}
 
 		/// <inheritdoc />
@@ -104,5 +109,8 @@ namespace Fluxera.Spatial
 		{
 			return !(left == right);
 		}
+
+		/// <inheritdoc />
+		public bool HasAltitude => this.Coordinates.Any(x => x.HasAltitude);
 	}
 }
