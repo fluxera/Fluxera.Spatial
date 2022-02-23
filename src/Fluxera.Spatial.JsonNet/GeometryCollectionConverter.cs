@@ -22,6 +22,11 @@ namespace Fluxera.Spatial.JsonNet
 			writer.WriteStartArray();
 			foreach(IGeometry geometry in value.Geometries)
 			{
+				if(geometry is GeometryCollection)
+				{
+					throw new ArgumentOutOfRangeException();
+				}
+
 				serializer.Serialize(writer, geometry, geometry.GetType());
 			}
 

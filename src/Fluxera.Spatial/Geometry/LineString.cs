@@ -153,5 +153,8 @@ namespace Fluxera.Spatial
 		{
 			return !(left == right);
 		}
+
+		/// <inheritdoc />
+		public bool HasAltitude => this.Coordinates.Any(x => x.Altitude.HasValue);
 	}
 }

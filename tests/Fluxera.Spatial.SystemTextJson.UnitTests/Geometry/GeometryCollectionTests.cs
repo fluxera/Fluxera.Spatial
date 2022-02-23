@@ -10,19 +10,21 @@ namespace Fluxera.Spatial.SystemTextJson.UnitTests.Geometry
 		private JsonSerializerOptions options;
 
 		/// <inheritdoc />
-		protected override string ModifyJson(string json)
-		{
-			return base.ModifyJson(json).Replace(".0", "");
-		}
-
-		/// <inheritdoc />
 		protected override void OnSetup()
 		{
 			this.options = new JsonSerializerOptions
 			{
-				WriteIndented = true
+				WriteIndented = false
 			};
 			this.options.UseSpatial();
+		}
+
+		/// <inheritdoc />
+		protected override string ModifyJson(string json)
+		{
+			json = base.ModifyJson(json);
+			json = json.Replace(".0", "");
+			return json;
 		}
 
 		/// <inheritdoc />

@@ -12,18 +12,14 @@ namespace Fluxera.Spatial.UnitTests.Geometry
 		{
 			LineString lineString0 = new LineString(new List<Point>
 			{
-				new Point(new Position(8.8057381, 53.0760221)),
-				new Point(new Position(8.8354164, 53.0664328)),
-				new Point(new Position(8.7896234, 53.0957640)),
-				new Point(new Position(8.8556994, 53.1103679))
+				new Point(new Position(100.0, 0.0)),
+				new Point(new Position(101.0, 1.0))
 			});
 
 			LineString lineString1 = new LineString(new List<Point>
 			{
-				new Point(new Position(8.8354164, 53.0664328)),
-				new Point(new Position(8.7896234, 53.0957640)),
-				new Point(new Position(8.8556994, 53.1103679)),
-				new Point(new Position(8.8057381, 53.0760221))
+				new Point(new Position(102.0, 2.0)),
+				new Point(new Position(103.0, 3.0))
 			});
 
 			MultiLineString expected = new MultiLineString(lineString0, lineString1);
@@ -41,18 +37,14 @@ namespace Fluxera.Spatial.UnitTests.Geometry
 		{
 			LineString lineString0 = new LineString(new List<Point>
 			{
-				new Point(new Position(8.8057381, 53.0760221)),
-				new Point(new Position(8.8354164, 53.0664328)),
-				new Point(new Position(8.7896234, 53.0957640)),
-				new Point(new Position(8.8556994, 53.1103679))
+				new Point(new Position(100.0, 0.0)),
+				new Point(new Position(101.0, 1.0))
 			});
 
 			LineString lineString1 = new LineString(new List<Point>
 			{
-				new Point(new Position(8.8354164, 53.0664328)),
-				new Point(new Position(8.7896234, 53.0957640)),
-				new Point(new Position(8.8556994, 53.1103679)),
-				new Point(new Position(8.8057381, 53.0760221))
+				new Point(new Position(102.0, 2.0)),
+				new Point(new Position(103.0, 3.0))
 			});
 
 			MultiLineString multiLineString = new MultiLineString(lineString0, lineString1);

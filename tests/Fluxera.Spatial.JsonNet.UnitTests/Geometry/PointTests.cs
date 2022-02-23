@@ -14,7 +14,7 @@
 			{
 				JsonSerializerSettings settings = new JsonSerializerSettings
 				{
-					Formatting = Formatting.Indented,
+					Formatting = Formatting.None
 				};
 				settings.UseSpatial();
 				return settings;

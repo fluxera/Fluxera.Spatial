@@ -12,10 +12,8 @@ namespace Fluxera.Spatial.UnitTests.Geometry
 		{
 			IList<Point> points = new List<Point>
 			{
-				new Point(new Position(8.8057381, 53.0760221)),
-				new Point(new Position(8.8354164, 53.0664328)),
-				new Point(new Position(8.7896234, 53.0957640)),
-				new Point(new Position(8.8556994, 53.1103679))
+				new Point(new Position(100.0, 0.0)),
+				new Point(new Position(101.0, 1.0))
 			};
 
 			MultiPoint expected = new MultiPoint(points);
@@ -33,10 +31,8 @@ namespace Fluxera.Spatial.UnitTests.Geometry
 		{
 			IList<Point> points = new List<Point>
 			{
-				new Point(new Position(8.8057381, 53.0760221)),
-				new Point(new Position(8.8354164, 53.0664328)),
-				new Point(new Position(8.7896234, 53.0957640)),
-				new Point(new Position(8.8556994, 53.1103679))
+				new Point(new Position(100.0, 0.0)),
+				new Point(new Position(101.0, 1.0))
 			};
 
 			MultiPoint multiPoint = new MultiPoint(points);

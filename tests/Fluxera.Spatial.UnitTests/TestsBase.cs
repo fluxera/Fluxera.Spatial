@@ -3,6 +3,7 @@ namespace Fluxera.Spatial.UnitTests
 	using System;
 	using System.IO;
 	using System.Reflection;
+	using System.Text.RegularExpressions;
 	using NUnit.Framework;
 
 	public abstract class TestsBase<T>
@@ -22,7 +23,7 @@ namespace Fluxera.Spatial.UnitTests
 			Type type = typeof(T);
 			string path = $"{AssemblyName}.json.{type.Name}.{name}.json";
 
-			string json = string.Empty;
+			string json;
 
 			using(Stream resourceStream = Assembly.GetManifestResourceStream(path)!)
 			{
@@ -32,12 +33,20 @@ namespace Fluxera.Spatial.UnitTests
 				}
 			}
 
-			return this.ModifyJson(json);
+			json = this.Minify(json);
+			json = this.ModifyJson(json);
+
+			return json;
 		}
 
 		protected virtual string ModifyJson(string json)
 		{
-			return json.Replace("\t", "  ");
+			return json;
+		}
+
+		protected string Minify(string json)
+		{
+			return Regex.Replace(json, @"(""(?:[^""\\]|\\.)*"")|\s+", "$1", RegexOptions.Compiled);
 		}
 
 		protected abstract void OnSetup();

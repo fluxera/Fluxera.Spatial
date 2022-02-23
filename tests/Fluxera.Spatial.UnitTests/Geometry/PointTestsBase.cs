@@ -9,7 +9,7 @@ namespace Fluxera.Spatial.UnitTests.Geometry
 		[Test]
 		public void ShouldDeserialize()
 		{
-			Point expected = new Point(new Position(8.8057381, 53.0760221));
+			Point expected = new Point(new Position(100.0, 0.0));
 			Point actual = this.Deserialize("WithoutAltitude");
 
 			Console.WriteLine(expected);
@@ -22,7 +22,7 @@ namespace Fluxera.Spatial.UnitTests.Geometry
 		[Test]
 		public void ShouldDeserializeWithAltitude()
 		{
-			Point expected = new Point(new Position(8.8057381, 53.0760221, 105.5));
+			Point expected = new Point(new Position(100.0, 0.0, 200.0));
 			Point actual = this.Deserialize("WithAltitude");
 
 			Console.WriteLine(expected);
@@ -35,7 +35,7 @@ namespace Fluxera.Spatial.UnitTests.Geometry
 		[Test]
 		public void ShouldSerialize()
 		{
-			Point point = new Point(new Position(8.8057381, 53.0760221));
+			Point point = new Point(new Position(100.0, 0.0));
 
 			string expected = this.GetJson("WithoutAltitude");
 			string actual = this.Serialize(point);
@@ -49,7 +49,7 @@ namespace Fluxera.Spatial.UnitTests.Geometry
 		[Test]
 		public void ShouldSerializeWithAltitude()
 		{
-			Point point = new Point(new Position(8.8057381, 53.0760221, 105.5));
+			Point point = new Point(new Position(100.0, 0.0, 200.0));
 
 			string expected = this.GetJson("WithAltitude");
 			string actual = this.Serialize(point);

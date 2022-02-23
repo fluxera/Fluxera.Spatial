@@ -117,5 +117,8 @@ namespace Fluxera.Spatial
 		{
 			return new Position(point.Longitude, point.Latitude, point.Altitude);
 		}
+
+		/// <inheritdoc />
+		public bool HasAltitude => this.Coordinates.Altitude.HasValue;
 	}
 }

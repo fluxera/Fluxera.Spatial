@@ -101,5 +101,10 @@ namespace Fluxera.Spatial
 		{
 			return !(left == right);
 		}
+
+		/// <summary>
+		///     Gets if the position uses an altitude value.
+		/// </summary>
+		public bool HasAltitude => this.Altitude.HasValue;
 	}
 }

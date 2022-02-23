@@ -10,5 +10,9 @@ namespace Fluxera.Spatial
 	[PublicAPI]
 	public interface IGeometry
 	{
+		/// <summary>
+		///     Gets if the geometry object uses altitude in it's coordinates.
+		/// </summary>
+		bool HasAltitude { get; }
 	}
 }

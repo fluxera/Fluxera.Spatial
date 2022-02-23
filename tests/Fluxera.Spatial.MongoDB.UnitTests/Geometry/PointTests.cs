@@ -21,28 +21,24 @@
 		/// <inheritdoc />
 		protected override Point Deserialize(string jsonName)
 		{
-			return BsonSerializer.Deserialize<Point>(this.GetJson(jsonName))!;
+			string json = this.GetJson(jsonName);
+			json = "{\"Property\":" + json + "}";
+
+			TestEntity<Point> testEntity = BsonSerializer.Deserialize<TestEntity<Point>>(json);
+			return testEntity.Property;
 		}
 
 		/// <inheritdoc />
 		protected override string Serialize(Point obj)
 		{
-			return new PointEntity(obj).ToJson(new JsonWriterSettings
+			string json = new TestEntity<Point>(obj).ToJson(new JsonWriterSettings
 			{
-				Indent = true,
-				IndentChars = "  ",
-				OutputMode = JsonOutputMode.RelaxedExtendedJson
+				Indent = false
 			});
+			json = this.Minify(json);
+			json = json.Replace("{\"Property\":", "");
+			json = json.Remove(json.Length - 1);
+			return json;
 		}
-	}
-
-	public class PointEntity
-	{
-		public PointEntity(Point point)
-		{
-			this.Point = point;
-		}
-
-		public Point Point { get; set; }
 	}
 }

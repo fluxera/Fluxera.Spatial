@@ -14,9 +14,17 @@ namespace Fluxera.Spatial.SystemTextJson.UnitTests.Geometry
 		{
 			this.options = new JsonSerializerOptions
 			{
-				WriteIndented = true
+				WriteIndented = false
 			};
 			this.options.UseSpatial();
+		}
+
+		/// <inheritdoc />
+		protected override string ModifyJson(string json)
+		{
+			json = base.ModifyJson(json);
+			json = json.Replace(".0", "");
+			return json;
 		}
 
 		/// <inheritdoc />
