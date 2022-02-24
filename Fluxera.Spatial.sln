@@ -24,21 +24,25 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{F18D2D58
 		tests\Directory.Build.props = tests\Directory.Build.props
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fluxera.Spatial", "src\Fluxera.Spatial\Fluxera.Spatial.csproj", "{EE22035C-7DF9-4945-858D-F6C735AC8F3C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fluxera.Spatial", "src\Fluxera.Spatial\Fluxera.Spatial.csproj", "{EE22035C-7DF9-4945-858D-F6C735AC8F3C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fluxera.Spatial.UnitTests", "tests\Fluxera.Spatial.UnitTests\Fluxera.Spatial.UnitTests.csproj", "{0C549DAB-55AD-4524-8F1B-5925334878A5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fluxera.Spatial.UnitTests", "tests\Fluxera.Spatial.UnitTests\Fluxera.Spatial.UnitTests.csproj", "{0C549DAB-55AD-4524-8F1B-5925334878A5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fluxera.Spatial.JsonNet", "src\Fluxera.Spatial.JsonNet\Fluxera.Spatial.JsonNet.csproj", "{9B6156D6-2B48-486E-99F5-9B865308F573}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fluxera.Spatial.JsonNet", "src\Fluxera.Spatial.JsonNet\Fluxera.Spatial.JsonNet.csproj", "{9B6156D6-2B48-486E-99F5-9B865308F573}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fluxera.Spatial.JsonNet.UnitTests", "tests\Fluxera.Spatial.JsonNet.UnitTests\Fluxera.Spatial.JsonNet.UnitTests.csproj", "{14DA4539-A6D0-448A-BC25-46FD575453DC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fluxera.Spatial.JsonNet.UnitTests", "tests\Fluxera.Spatial.JsonNet.UnitTests\Fluxera.Spatial.JsonNet.UnitTests.csproj", "{14DA4539-A6D0-448A-BC25-46FD575453DC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fluxera.Spatial.SystemTextJson", "src\Fluxera.Spatial.SystemTextJson\Fluxera.Spatial.SystemTextJson.csproj", "{87604E3D-91E4-4BCB-866F-E8CFCFE32ABB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fluxera.Spatial.SystemTextJson", "src\Fluxera.Spatial.SystemTextJson\Fluxera.Spatial.SystemTextJson.csproj", "{87604E3D-91E4-4BCB-866F-E8CFCFE32ABB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fluxera.Spatial.SystemTextJson.UnitTests", "tests\Fluxera.Spatial.SystemTextJson.UnitTests\Fluxera.Spatial.SystemTextJson.UnitTests.csproj", "{58EB5574-034F-46C4-BA44-6D8FAD667C30}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fluxera.Spatial.SystemTextJson.UnitTests", "tests\Fluxera.Spatial.SystemTextJson.UnitTests\Fluxera.Spatial.SystemTextJson.UnitTests.csproj", "{58EB5574-034F-46C4-BA44-6D8FAD667C30}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fluxera.Spatial.MongoDB", "src\Fluxera.Spatial.MongoDB\Fluxera.Spatial.MongoDB.csproj", "{6A40D5E6-2107-4FEC-B381-B040A17783A8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fluxera.Spatial.MongoDB", "src\Fluxera.Spatial.MongoDB\Fluxera.Spatial.MongoDB.csproj", "{6A40D5E6-2107-4FEC-B381-B040A17783A8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fluxera.Spatial.MongoDB.UnitTests", "tests\Fluxera.Spatial.MongoDB.UnitTests\Fluxera.Spatial.MongoDB.UnitTests.csproj", "{60E2FE6F-E7BC-47C6-8580-76E9AD93CC1D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fluxera.Spatial.MongoDB.UnitTests", "tests\Fluxera.Spatial.MongoDB.UnitTests\Fluxera.Spatial.MongoDB.UnitTests.csproj", "{60E2FE6F-E7BC-47C6-8580-76E9AD93CC1D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fluxera.Spatial.LiteDB", "src\Fluxera.Spatial.LiteDB\Fluxera.Spatial.LiteDB.csproj", "{6B43023E-94B9-4F22-9849-5430F1E25C6A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fluxera.Spatial.LiteDB.UnitTests", "tests\Fluxera.Spatial.LiteDB.UnitTests\Fluxera.Spatial.LiteDB.UnitTests.csproj", "{030C2175-5123-4A0F-8A71-269F6BC25FF3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -78,6 +82,14 @@ Global
 		{60E2FE6F-E7BC-47C6-8580-76E9AD93CC1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{60E2FE6F-E7BC-47C6-8580-76E9AD93CC1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{60E2FE6F-E7BC-47C6-8580-76E9AD93CC1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B43023E-94B9-4F22-9849-5430F1E25C6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B43023E-94B9-4F22-9849-5430F1E25C6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B43023E-94B9-4F22-9849-5430F1E25C6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B43023E-94B9-4F22-9849-5430F1E25C6A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{030C2175-5123-4A0F-8A71-269F6BC25FF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{030C2175-5123-4A0F-8A71-269F6BC25FF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{030C2175-5123-4A0F-8A71-269F6BC25FF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{030C2175-5123-4A0F-8A71-269F6BC25FF3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -91,6 +103,8 @@ Global
 		{58EB5574-034F-46C4-BA44-6D8FAD667C30} = {F18D2D58-282C-4D93-8D9A-3A76CF98F018}
 		{6A40D5E6-2107-4FEC-B381-B040A17783A8} = {DF28D730-99B3-4811-AAC7-725A73B3F668}
 		{60E2FE6F-E7BC-47C6-8580-76E9AD93CC1D} = {F18D2D58-282C-4D93-8D9A-3A76CF98F018}
+		{6B43023E-94B9-4F22-9849-5430F1E25C6A} = {DF28D730-99B3-4811-AAC7-725A73B3F668}
+		{030C2175-5123-4A0F-8A71-269F6BC25FF3} = {F18D2D58-282C-4D93-8D9A-3A76CF98F018}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D97BF2AF-6E68-4E88-BF70-773A86E26013}
