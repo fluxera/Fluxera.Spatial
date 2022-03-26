@@ -7,7 +7,9 @@
 	using global::MongoDB.Bson.Serialization.Serializers;
 	using global::MongoDB.Driver.GeoJsonObjectModel;
 	using global::MongoDB.Driver.GeoJsonObjectModel.Serializers;
+	using JetBrains.Annotations;
 
+	[PublicAPI]
 	public sealed class MultiPolygonSerializer : StructSerializerBase<MultiPolygon>
 	{
 		private readonly GeoJsonMultiPolygonSerializer<GeoJson2DGeographicCoordinates> serializer = new GeoJsonMultiPolygonSerializer<GeoJson2DGeographicCoordinates>();

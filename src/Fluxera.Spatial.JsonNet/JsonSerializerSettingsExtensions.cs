@@ -1,7 +1,9 @@
 ﻿namespace Fluxera.Spatial.JsonNet
 {
+	using JetBrains.Annotations;
 	using Newtonsoft.Json;
 
+	[PublicAPI]
 	public static class JsonSerializerSettingsExtensions
 	{
 		public static void UseSpatial(this JsonSerializerSettings settings)

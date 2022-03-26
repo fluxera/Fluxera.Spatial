@@ -7,7 +7,9 @@
 	using global::MongoDB.Bson.Serialization.Serializers;
 	using global::MongoDB.Driver.GeoJsonObjectModel;
 	using global::MongoDB.Driver.GeoJsonObjectModel.Serializers;
+	using JetBrains.Annotations;
 
+	[PublicAPI]
 	public sealed class LineStringSerializer : StructSerializerBase<LineString>
 	{
 		private readonly GeoJsonLineStringSerializer<GeoJson2DGeographicCoordinates> serializer = new GeoJsonLineStringSerializer<GeoJson2DGeographicCoordinates>();

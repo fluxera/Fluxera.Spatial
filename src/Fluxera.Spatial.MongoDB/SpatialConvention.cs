@@ -3,10 +3,8 @@
 	using System;
 	using global::MongoDB.Bson.Serialization;
 	using global::MongoDB.Bson.Serialization.Conventions;
-	using JetBrains.Annotations;
 
-	[PublicAPI]
-	public class SpatialConvention : ConventionBase, IMemberMapConvention
+	internal sealed class SpatialConvention : ConventionBase, IMemberMapConvention
 	{
 		/// <inheritdoc />
 		public void Apply(BsonMemberMap memberMap)
@@ -14,7 +12,7 @@
 			Type originalMemberType = memberMap.MemberType;
 			Type memberType = Nullable.GetUnderlyingType(originalMemberType) ?? originalMemberType;
 
-			IBsonSerializer serializer = null;
+			IBsonSerializer? serializer = null;
 
 			if(memberType == typeof(Point))
 			{
@@ -44,12 +42,11 @@
 			{
 				serializer = new GeometryCollectionSerializer();
 			}
-			else
-			{
-				throw new ArgumentOutOfRangeException($"No serializer available for type {memberType.Name}");
-			}
 
-			memberMap.SetSerializer(serializer);
+			if(serializer != null)
+			{
+				memberMap.SetSerializer(serializer);
+			}
 		}
 	}
 }
