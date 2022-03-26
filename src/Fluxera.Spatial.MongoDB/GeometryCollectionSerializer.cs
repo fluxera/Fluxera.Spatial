@@ -9,7 +9,9 @@
 	using global::MongoDB.Bson.Serialization.Serializers;
 	using global::MongoDB.Driver.GeoJsonObjectModel;
 	using global::MongoDB.Driver.GeoJsonObjectModel.Serializers;
+	using JetBrains.Annotations;
 
+	[PublicAPI]
 	public sealed class GeometryCollectionSerializer : StructSerializerBase<GeometryCollection>
 	{
 		private readonly LineStringSerializer lineStringSerializer = new LineStringSerializer();

@@ -2,7 +2,9 @@
 {
 	using System.Collections.Generic;
 	using global::LiteDB;
+	using JetBrains.Annotations;
 
+	[PublicAPI]
 	public static class MultiLineStringSerializer
 	{
 		public static BsonValue Serialize(object obj)

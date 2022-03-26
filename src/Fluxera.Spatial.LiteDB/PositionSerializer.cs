@@ -2,7 +2,9 @@
 {
 	using System.Linq;
 	using global::LiteDB;
+	using JetBrains.Annotations;
 
+	[PublicAPI]
 	internal static class PositionSerializer
 	{
 		public static BsonArray WritePosition(Position position)

@@ -7,7 +7,9 @@
 	using global::MongoDB.Bson.Serialization.Serializers;
 	using global::MongoDB.Driver.GeoJsonObjectModel;
 	using global::MongoDB.Driver.GeoJsonObjectModel.Serializers;
+	using JetBrains.Annotations;
 
+	[PublicAPI]
 	public sealed class MultiPointSerializer : StructSerializerBase<MultiPoint>
 	{
 		private readonly GeoJsonMultiPointSerializer<GeoJson2DGeographicCoordinates> serializer = new GeoJsonMultiPointSerializer<GeoJson2DGeographicCoordinates>();
