@@ -13,8 +13,8 @@
 				{
 					JArray coordinatesArray = JArray.Load(reader);
 
-					double[]? values = coordinatesArray.ToObject<double[]>();
-					if((values != null) && (values.Length >= 2))
+					double[] values = coordinatesArray.ToObject<double[]>();
+					if(values != null && values.Length >= 2)
 					{
 						double longitude = values[0];
 						double latitude = values[1];

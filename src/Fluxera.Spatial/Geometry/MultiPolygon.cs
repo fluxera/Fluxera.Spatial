@@ -16,6 +16,9 @@ namespace Fluxera.Spatial
 	[PublicAPI]
 	public struct MultiPolygon : IGeometry
 	{
+		/// <summary>
+		///     Represents an empty <see cref="MultiPolygon" />.
+		/// </summary>
 		public static readonly MultiPolygon Empty = new MultiPolygon();
 
 		/// <summary>
@@ -67,7 +70,7 @@ namespace Fluxera.Spatial
 
 			foreach(Polygon polygon in this.Coordinates)
 			{
-				hashCode = (hashCode * 37) ^ polygon.GetHashCode();
+				hashCode = hashCode * 37 ^ polygon.GetHashCode();
 			}
 
 			return hashCode;

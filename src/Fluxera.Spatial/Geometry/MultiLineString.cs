@@ -16,6 +16,9 @@ namespace Fluxera.Spatial
 	[PublicAPI]
 	public struct MultiLineString : IGeometry
 	{
+		/// <summary>
+		///     Represents an empty <see cref="MultiLineString" />.
+		/// </summary>
 		public static readonly MultiLineString Empty = new MultiLineString();
 
 		/// <summary>
@@ -67,7 +70,7 @@ namespace Fluxera.Spatial
 
 			foreach(LineString lineString in this.Coordinates)
 			{
-				hashCode = (hashCode * 37) ^ lineString.GetHashCode();
+				hashCode = hashCode * 37 ^ lineString.GetHashCode();
 			}
 
 			return hashCode;

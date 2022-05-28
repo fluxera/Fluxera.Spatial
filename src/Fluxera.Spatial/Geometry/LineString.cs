@@ -16,6 +16,9 @@ namespace Fluxera.Spatial
 	[PublicAPI]
 	public struct LineString : IGeometry
 	{
+		/// <summary>
+		///     Represents an empty <see cref="LineString" />.
+		/// </summary>
 		public static readonly LineString Empty = new LineString();
 
 		/// <summary>
@@ -103,8 +106,8 @@ namespace Fluxera.Spatial
 		///     Checks if the line string is a linear ring.
 		/// </summary>
 		public bool IsLinearRing =>
-			(this.Coordinates.Length >= 4) &&
-			(this.Coordinates.First() == this.Coordinates.Last());
+			this.Coordinates.Length >= 4 &&
+			this.Coordinates.First() == this.Coordinates.Last();
 
 		/// <inheritdoc />
 		public override bool Equals(object obj)
@@ -124,7 +127,7 @@ namespace Fluxera.Spatial
 
 			foreach(Position position in this.Coordinates)
 			{
-				hashCode = (hashCode * 37) ^ position.GetHashCode();
+				hashCode = hashCode * 37 ^ position.GetHashCode();
 			}
 
 			return hashCode;

@@ -13,6 +13,9 @@ namespace Fluxera.Spatial
 	[PublicAPI]
 	public struct Point : IGeometry
 	{
+		/// <summary>
+		///     Represents an empty <see cref="Point" />.
+		/// </summary>
 		public static readonly Point Empty = new Point();
 
 		/// <summary>

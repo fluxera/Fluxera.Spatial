@@ -7,7 +7,7 @@
 	<PropertyGroup>
 		<Title>Fluxera.Spatial.LiteDB</Title>
 		<Description>A libary that provides serializer support for LiteDB spatial types.</Description>
-		<PackageTags>fluxera;library;spatial,json</PackageTags>
+		<PackageTags>fluxera;library;spatial;litedb</PackageTags>
 	</PropertyGroup>
 
 	<ItemGroup>

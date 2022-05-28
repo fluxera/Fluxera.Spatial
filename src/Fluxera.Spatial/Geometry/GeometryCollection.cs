@@ -16,6 +16,9 @@ namespace Fluxera.Spatial
 	[PublicAPI]
 	public struct GeometryCollection : IGeometry
 	{
+		/// <summary>
+		///     Represents an empty <see cref="GeometryCollection" />.
+		/// </summary>
 		public static readonly GeometryCollection Empty = new GeometryCollection();
 
 		/// <summary>
@@ -67,7 +70,7 @@ namespace Fluxera.Spatial
 
 			foreach(IGeometry geometryObject in this.Geometries)
 			{
-				hashCode = (hashCode * 37) ^ geometryObject.GetHashCode();
+				hashCode = hashCode * 37 ^ geometryObject.GetHashCode();
 			}
 
 			return hashCode;

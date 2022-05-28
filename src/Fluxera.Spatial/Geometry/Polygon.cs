@@ -15,6 +15,9 @@ namespace Fluxera.Spatial
 	[PublicAPI]
 	public struct Polygon : IGeometry
 	{
+		/// <summary>
+		///     Represents an empty <see cref="Polygon" />.
+		/// </summary>
 		public static readonly Polygon Empty = new Polygon();
 
 		/// <summary>
@@ -80,7 +83,7 @@ namespace Fluxera.Spatial
 
 			foreach(LineString lineString in this.Coordinates)
 			{
-				hashCode = (hashCode * 37) ^ lineString.GetHashCode();
+				hashCode = hashCode * 37 ^ lineString.GetHashCode();
 			}
 
 			return hashCode;

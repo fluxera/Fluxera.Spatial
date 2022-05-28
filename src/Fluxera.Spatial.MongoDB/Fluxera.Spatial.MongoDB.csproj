@@ -7,7 +7,7 @@
 	<PropertyGroup>
 		<Title>Fluxera.Spatial.MongoDB</Title>
 		<Description>A libary that provides serializer support for MongoDB for spatial types.</Description>
-		<PackageTags>fluxera;library;spatial,json</PackageTags>
+		<PackageTags>fluxera;library;spatia;mongodb</PackageTags>
 	</PropertyGroup>
 
 	<ItemGroup>

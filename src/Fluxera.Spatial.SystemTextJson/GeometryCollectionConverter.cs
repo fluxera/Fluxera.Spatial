@@ -7,6 +7,7 @@
 	using System.Text.Json.Serialization;
 	using JetBrains.Annotations;
 
+	/// <inheritdoc />
 	[PublicAPI]
 	public sealed class GeometryCollectionConverter : JsonConverter<GeometryCollection>
 	{
@@ -44,7 +45,7 @@
 				string type = string.Empty;
 				IList<IGeometry> geometries = new List<IGeometry>();
 
-				while(reader.Read() && (reader.TokenType != JsonTokenType.EndObject))
+				while(reader.Read() && reader.TokenType != JsonTokenType.EndObject)
 				{
 					string propertyName = reader.GetString()!;
 
@@ -55,7 +56,7 @@
 					}
 					else if(propertyName == "geometries")
 					{
-						while(reader.Read() && (reader.TokenType != JsonTokenType.EndArray))
+						while(reader.Read() && reader.TokenType != JsonTokenType.EndArray)
 						{
 							JsonObject jObject = JsonSerializer.Deserialize<JsonObject>(ref reader, options)!;
 							string geometryTypeName = jObject["type"]!.GetValue<string>();

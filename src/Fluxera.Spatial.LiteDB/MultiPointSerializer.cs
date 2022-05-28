@@ -4,9 +4,17 @@
 	using global::LiteDB;
 	using JetBrains.Annotations;
 
+	/// <summary>
+	///     A serializer that handles <see cref="MultiPoint" /> instances.
+	/// </summary>
 	[PublicAPI]
 	public static class MultiPointSerializer
 	{
+		/// <summary>
+		///     Serialize the spatial object.
+		/// </summary>
+		/// <param name="obj"></param>
+		/// <returns></returns>
 		public static BsonValue Serialize(object obj)
 		{
 			MultiPoint multiPoint = (MultiPoint)obj;
@@ -28,6 +36,11 @@
 			return document;
 		}
 
+		/// <summary>
+		///     Deserialize the spatial object.
+		/// </summary>
+		/// <param name="value"></param>
+		/// <returns></returns>
 		public static object Deserialize(BsonValue value)
 		{
 			string type = value["type"].AsString;
