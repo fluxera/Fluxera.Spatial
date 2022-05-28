@@ -12,7 +12,7 @@
 			Type originalMemberType = memberMap.MemberType;
 			Type memberType = Nullable.GetUnderlyingType(originalMemberType) ?? originalMemberType;
 
-			IBsonSerializer? serializer = null;
+			IBsonSerializer serializer = null;
 
 			if(memberType == typeof(Point))
 			{

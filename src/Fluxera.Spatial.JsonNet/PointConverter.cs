@@ -5,6 +5,7 @@ namespace Fluxera.Spatial.JsonNet
 	using Newtonsoft.Json;
 	using Newtonsoft.Json.Linq;
 
+	/// <inheritdoc />
 	[PublicAPI]
 	public sealed class PointConverter : JsonConverter<Point>
 	{

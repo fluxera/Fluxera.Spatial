@@ -4,9 +4,17 @@
 	using global::LiteDB;
 	using JetBrains.Annotations;
 
+	/// <summary>
+	///     A serializer that handles <see cref="MultiPolygon" /> instances.
+	/// </summary>
 	[PublicAPI]
 	public static class MultiPolygonSerializer
 	{
+		/// <summary>
+		///     Serialize the spatial object.
+		/// </summary>
+		/// <param name="obj"></param>
+		/// <returns></returns>
 		public static BsonValue Serialize(object obj)
 		{
 			MultiPolygon multiPolygon = (MultiPolygon)obj;
@@ -40,6 +48,11 @@
 			return document;
 		}
 
+		/// <summary>
+		///     Deserialize the spatial object.
+		/// </summary>
+		/// <param name="value"></param>
+		/// <returns></returns>
 		public static object Deserialize(BsonValue value)
 		{
 			string type = value["type"].AsString;

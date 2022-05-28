@@ -16,9 +16,12 @@ namespace Fluxera.Spatial
 	[PublicAPI]
 	public struct Position
 	{
+		/// <summary>
+		///     Represents an empty <see cref="Position" />.
+		/// </summary>
 		public static readonly Position Empty = new Position();
 
-		private static readonly IEqualityComparer<double> doubleComparer = new DoubleComparer();
+		private static readonly IEqualityComparer<double> DoubleComparer = new DoubleComparer();
 
 		/// <summary>
 		///     Creates a new instance of the <see cref="Position" /> type.
@@ -70,8 +73,8 @@ namespace Fluxera.Spatial
 		public override int GetHashCode()
 		{
 			int hashCode = 37 ^ this.Longitude.GetHashCode();
-			hashCode = (hashCode * 37) ^ this.Latitude.GetHashCode();
-			hashCode = (hashCode * 37) ^ this.Altitude.GetValueOrDefault().GetHashCode();
+			hashCode = hashCode * 37 ^ this.Latitude.GetHashCode();
+			hashCode = hashCode * 37 ^ this.Altitude.GetValueOrDefault().GetHashCode();
 			return hashCode;
 		}
 
@@ -89,9 +92,9 @@ namespace Fluxera.Spatial
 		public static bool operator ==(Position left, Position right)
 		{
 			return
-				doubleComparer.Equals(left.Longitude, right.Longitude) &&
-				doubleComparer.Equals(left.Latitude, right.Latitude) &&
-				doubleComparer.Equals(left.Altitude.GetValueOrDefault(), right.Altitude.GetValueOrDefault());
+				DoubleComparer.Equals(left.Longitude, right.Longitude) &&
+				DoubleComparer.Equals(left.Latitude, right.Latitude) &&
+				DoubleComparer.Equals(left.Altitude.GetValueOrDefault(), right.Altitude.GetValueOrDefault());
 		}
 
 		/// <summary>

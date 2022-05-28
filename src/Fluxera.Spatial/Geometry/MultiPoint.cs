@@ -16,6 +16,9 @@ namespace Fluxera.Spatial
 	[PublicAPI]
 	public struct MultiPoint : IGeometry
 	{
+		/// <summary>
+		///     Represents an empty <see cref="MultiPoint" />.
+		/// </summary>
 		public static readonly MultiPoint Empty = new MultiPoint();
 
 		/// <summary>
@@ -89,7 +92,7 @@ namespace Fluxera.Spatial
 
 			foreach(Position position in this.Coordinates)
 			{
-				hashCode = (hashCode * 37) ^ position.GetHashCode();
+				hashCode = hashCode * 37 ^ position.GetHashCode();
 			}
 
 			return hashCode;

@@ -11,6 +11,7 @@
 	using global::MongoDB.Driver.GeoJsonObjectModel.Serializers;
 	using JetBrains.Annotations;
 
+	/// <inheritdoc />
 	[PublicAPI]
 	public sealed class GeometryCollectionSerializer : StructSerializerBase<GeometryCollection>
 	{

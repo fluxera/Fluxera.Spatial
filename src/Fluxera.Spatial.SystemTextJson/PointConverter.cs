@@ -5,6 +5,7 @@
 	using System.Text.Json.Serialization;
 	using JetBrains.Annotations;
 
+	/// <inheritdoc />
 	[PublicAPI]
 	public sealed class PointConverter : JsonConverter<Point>
 	{
@@ -30,7 +31,7 @@
 				string type = string.Empty;
 				Position position = Position.Empty;
 
-				while(reader.Read() && (reader.TokenType != JsonTokenType.EndObject))
+				while(reader.Read() && reader.TokenType != JsonTokenType.EndObject)
 				{
 					string propertyName = reader.GetString()!;
 

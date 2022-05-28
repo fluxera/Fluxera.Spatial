@@ -6,6 +6,7 @@
 	using System.Text.Json.Serialization;
 	using JetBrains.Annotations;
 
+	/// <inheritdoc />
 	[PublicAPI]
 	public sealed class MultiLineStringConverter : JsonConverter<MultiLineString>
 	{
@@ -45,7 +46,7 @@
 				string type = string.Empty;
 				IList<LineString> lineStrings = new List<LineString>();
 
-				while(reader.Read() && (reader.TokenType != JsonTokenType.EndObject))
+				while(reader.Read() && reader.TokenType != JsonTokenType.EndObject)
 				{
 					string propertyName = reader.GetString()!;
 
@@ -56,11 +57,11 @@
 					}
 					else if(propertyName == "coordinates")
 					{
-						while(reader.Read() && (reader.TokenType != JsonTokenType.EndArray))
+						while(reader.Read() && reader.TokenType != JsonTokenType.EndArray)
 						{
 							IList<Position> positions = new List<Position>();
 
-							while(reader.Read() && (reader.TokenType != JsonTokenType.EndArray))
+							while(reader.Read() && reader.TokenType != JsonTokenType.EndArray)
 							{
 								Position position = reader.GetPosition();
 								positions.Add(position);

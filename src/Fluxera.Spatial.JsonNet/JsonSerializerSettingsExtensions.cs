@@ -3,9 +3,16 @@
 	using JetBrains.Annotations;
 	using Newtonsoft.Json;
 
+	/// <summary>
+	///     Extension methods for the <see cref="JsonSerializerSettings" /> type.
+	/// </summary>
 	[PublicAPI]
 	public static class JsonSerializerSettingsExtensions
 	{
+		/// <summary>
+		///     Configures the serializer to use the spatial type converters.
+		/// </summary>
+		/// <param name="settings"></param>
 		public static void UseSpatial(this JsonSerializerSettings settings)
 		{
 			settings.Converters.Add(new PointConverter());
