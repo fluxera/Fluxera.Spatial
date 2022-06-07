@@ -40,7 +40,7 @@ At the moment serialization support is available for:
 - [MongoDB](https://github.com/mongodb/mongo-csharp-driver)
 - [System.Text.Json](https://github.com/dotnet/corefx/tree/master/src/System.Text.Json)
 
-The serializers make shure that the objects are serialized in the GeoJSON format and in case of
+The serializers make sure that the objects are serialized in the GeoJSON format and in case of
 databases also stored im the correct format to support indexing and geo queries.
 
 ### Newtonsoft.Json (JSON.NET)
