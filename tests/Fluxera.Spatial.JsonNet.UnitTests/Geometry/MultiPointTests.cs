@@ -24,7 +24,7 @@ namespace Fluxera.Spatial.JsonNet.UnitTests.Geometry
 		/// <inheritdoc />
 		protected override MultiPoint Deserialize(string jsonName)
 		{
-			return JsonConvert.DeserializeObject<MultiPoint>(this.GetJson(jsonName))!;
+			return JsonConvert.DeserializeObject<MultiPoint>(this.GetJson(jsonName));
 		}
 
 		/// <inheritdoc />

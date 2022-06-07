@@ -25,7 +25,7 @@ namespace Fluxera.Spatial.UnitTests
 
 			string json;
 
-			using(Stream resourceStream = Assembly.GetManifestResourceStream(path)!)
+			using(Stream resourceStream = Assembly.GetManifestResourceStream(path))
 			{
 				using(StreamReader reader = new StreamReader(resourceStream))
 				{

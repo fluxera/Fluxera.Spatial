@@ -24,7 +24,7 @@ namespace Fluxera.Spatial.JsonNet.UnitTests.Geometry
 		/// <inheritdoc />
 		protected override LineString Deserialize(string jsonName)
 		{
-			return JsonConvert.DeserializeObject<LineString>(this.GetJson(jsonName))!;
+			return JsonConvert.DeserializeObject<LineString>(this.GetJson(jsonName));
 		}
 
 		/// <inheritdoc />

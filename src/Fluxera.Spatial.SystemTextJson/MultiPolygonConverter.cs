@@ -55,12 +55,12 @@
 
 				while(reader.Read() && reader.TokenType != JsonTokenType.EndObject)
 				{
-					string propertyName = reader.GetString()!;
+					string propertyName = reader.GetString();
 
 					reader.Read();
 					if(propertyName == "type")
 					{
-						type = reader.GetString()!;
+						type = reader.GetString();
 					}
 					else if(propertyName == "coordinates")
 					{

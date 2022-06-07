@@ -47,19 +47,19 @@
 
 				while(reader.Read() && reader.TokenType != JsonTokenType.EndObject)
 				{
-					string propertyName = reader.GetString()!;
+					string propertyName = reader.GetString();
 
 					reader.Read();
 					if(propertyName == "type")
 					{
-						type = reader.GetString()!;
+						type = reader.GetString();
 					}
 					else if(propertyName == "geometries")
 					{
 						while(reader.Read() && reader.TokenType != JsonTokenType.EndArray)
 						{
-							JsonObject jObject = JsonSerializer.Deserialize<JsonObject>(ref reader, options)!;
-							string geometryTypeName = jObject["type"]!.GetValue<string>();
+							JsonObject jObject = JsonSerializer.Deserialize<JsonObject>(ref reader, options);
+							string geometryTypeName = jObject["type"].GetValue<string>();
 
 							Type geometryType = geometryTypeName switch
 							{
@@ -72,7 +72,7 @@
 								_ => throw new ArgumentOutOfRangeException()
 							};
 
-							object geometry = jObject.Deserialize(geometryType, options)!;
+							object geometry = jObject.Deserialize(geometryType, options);
 							geometries.Add((IGeometry)geometry);
 						}
 					}

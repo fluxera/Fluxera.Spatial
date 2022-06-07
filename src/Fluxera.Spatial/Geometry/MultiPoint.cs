@@ -88,7 +88,7 @@ namespace Fluxera.Spatial
 		/// <inheritdoc />
 		public override int GetHashCode()
 		{
-			int hashCode = base.GetHashCode();
+			int hashCode = 17;
 
 			foreach(Position position in this.Coordinates)
 			{

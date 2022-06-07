@@ -24,7 +24,7 @@
 		/// <inheritdoc />
 		protected override Point Deserialize(string jsonName)
 		{
-			return JsonConvert.DeserializeObject<Point>(this.GetJson(jsonName))!;
+			return JsonConvert.DeserializeObject<Point>(this.GetJson(jsonName));
 		}
 
 		/// <inheritdoc />

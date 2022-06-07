@@ -32,12 +32,12 @@ namespace Fluxera.Spatial.JsonNet
 
 				if(item.ContainsKey("type"))
 				{
-					string type = item["type"]!.Value<string>()!;
+					string type = item["type"].Value<string>();
 					if(type == "Point")
 					{
 						if(item.ContainsKey("coordinates"))
 						{
-							JToken coordinates = item["coordinates"]!;
+							JToken coordinates = item["coordinates"];
 
 							Position position = coordinates.CreateReader().ReadPosition();
 							return new Point(position);
