@@ -45,12 +45,12 @@ namespace Fluxera.Spatial.JsonNet
 
 				if(item.ContainsKey("type"))
 				{
-					string type = item["type"]!.Value<string>()!;
+					string type = item["type"].Value<string>();
 					if(type == "GeometryCollection")
 					{
 						if(item.ContainsKey("geometries"))
 						{
-							JToken geometriesToken = item["geometries"]!;
+							JToken geometriesToken = item["geometries"];
 							if(geometriesToken.Type == JTokenType.Array)
 							{
 								JArray geometriesArray = (JArray)geometriesToken;
@@ -58,7 +58,7 @@ namespace Fluxera.Spatial.JsonNet
 								IList<IGeometry> geometries = new List<IGeometry>();
 								foreach(JToken token in geometriesArray)
 								{
-									string geometryTypeName = token["type"]!.Value<string>()!;
+									string geometryTypeName = token["type"].Value<string>();
 
 									Type geometryType = geometryTypeName switch
 									{
@@ -71,7 +71,7 @@ namespace Fluxera.Spatial.JsonNet
 										_ => throw new ArgumentOutOfRangeException()
 									};
 
-									object geometry = serializer.Deserialize(token.CreateReader(), geometryType)!;
+									object geometry = serializer.Deserialize(token.CreateReader(), geometryType);
 									geometries.Add((IGeometry)geometry);
 								}
 

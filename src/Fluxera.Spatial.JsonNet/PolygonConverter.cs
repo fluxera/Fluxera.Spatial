@@ -47,12 +47,12 @@ namespace Fluxera.Spatial.JsonNet
 
 				if(item.ContainsKey("type"))
 				{
-					string type = item["type"]!.Value<string>()!;
+					string type = item["type"].Value<string>();
 					if(type == "Polygon")
 					{
 						if(item.ContainsKey("coordinates"))
 						{
-							JToken jToken = item["coordinates"]!;
+							JToken jToken = item["coordinates"];
 							if(jToken.Type == JTokenType.Array)
 							{
 								JArray outerArray = (JArray)jToken;

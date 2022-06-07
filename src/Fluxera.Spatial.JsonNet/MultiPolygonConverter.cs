@@ -54,12 +54,12 @@ namespace Fluxera.Spatial.JsonNet
 
 				if(item.ContainsKey("type"))
 				{
-					string type = item["type"]!.Value<string>()!;
+					string type = item["type"].Value<string>();
 					if(type == "MultiPolygon")
 					{
 						if(item.ContainsKey("coordinates"))
 						{
-							JToken coordinatesToken = item["coordinates"]!;
+							JToken coordinatesToken = item["coordinates"];
 							if(coordinatesToken.Type == JTokenType.Array)
 							{
 								JArray coordinatesArray = (JArray)coordinatesToken;
