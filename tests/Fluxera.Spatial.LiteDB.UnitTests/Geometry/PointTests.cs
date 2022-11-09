@@ -23,7 +23,7 @@
 		/// <inheritdoc />
 		protected override string Serialize(Point obj)
 		{
-			BsonDocument? doc = BsonMapper.Global.ToDocument(obj);
+			BsonDocument doc = BsonMapper.Global.ToDocument(obj);
 			return JsonSerializer.Serialize(doc);
 		}
 	}

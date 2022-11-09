@@ -23,7 +23,7 @@ namespace Fluxera.Spatial.LiteDB.UnitTests.Geometry
 		/// <inheritdoc />
 		protected override string Serialize(MultiPoint obj)
 		{
-			BsonDocument? doc = BsonMapper.Global.ToDocument(obj);
+			BsonDocument doc = BsonMapper.Global.ToDocument(obj);
 			return JsonSerializer.Serialize(doc);
 		}
 	}
