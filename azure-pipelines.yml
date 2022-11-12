@@ -14,9 +14,10 @@ stages:
   jobs:
   - job: BuildAndTest
     pool:
-      name: Windows-Default
+      name: Default
     steps:
     - checkout: self
+      fetchDepth: 0
       persistCredentials: 'true'
       clean: true
     # Install the desired .NET SDK.   
