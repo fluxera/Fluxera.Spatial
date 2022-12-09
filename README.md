@@ -1,4 +1,4 @@
-[![Build Status](https://dev.azure.com/fluxera/Foundation/_apis/build/status/GitHub/fluxera.Fluxera.Spatial?branchName=main)](https://dev.azure.com/fluxera/Foundation/_build/latest?definitionId=70&branchName=main)
+[![Build Status](https://dev.azure.com/fluxera/Foundation/_apis/build/status/GitHub/fluxera.Fluxera.Spatial?branchName=main&stageName=BuildAndTest)](https://dev.azure.com/fluxera/Foundation/_build/latest?definitionId=81&branchName=main)
 
 # Fluxera.Spatial
 A libary that provides spatial types based on GeoJSON defined in [RFC 7946](https://datatracker.ietf.org/doc/html/rfc7946).
