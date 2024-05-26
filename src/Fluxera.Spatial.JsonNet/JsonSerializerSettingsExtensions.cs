@@ -15,6 +15,8 @@
 		/// <param name="settings"></param>
 		public static void UseSpatial(this JsonSerializerSettings settings)
 		{
+			Guard.ThrowIfNull(settings);
+
 			settings.Converters.Add(new PointConverter());
 			settings.Converters.Add(new MultiPointConverter());
 			settings.Converters.Add(new LineStringConverter());

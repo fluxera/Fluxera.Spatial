@@ -38,17 +38,16 @@ namespace Fluxera.Spatial.JsonNet
 			{
 				JObject item = JObject.Load(reader);
 
-				if(item.ContainsKey("type"))
+				if(item.TryGetValue("type", out JToken typeToken))
 				{
-					string type = item["type"].Value<string>();
+					string type = typeToken.Value<string>();
 					if(type == "LineString")
 					{
-						if(item.ContainsKey("coordinates"))
+						if(item.TryGetValue("coordinates", out JToken coordinatesToken))
 						{
-							JToken jToken = item["coordinates"];
-							if(jToken.Type == JTokenType.Array)
+							if(coordinatesToken.Type == JTokenType.Array)
 							{
-								JArray jArray = (JArray)jToken;
+								JArray jArray = (JArray)coordinatesToken;
 
 								IList<Position> positions = new List<Position>();
 								foreach(JToken token in jArray)

@@ -7,6 +7,8 @@
 	{
 		public static Position ReadPosition(this JsonReader reader)
 		{
+			Guard.ThrowIfNull(reader);
+
 			while(reader.Read())
 			{
 				if(reader.TokenType == JsonToken.StartArray)

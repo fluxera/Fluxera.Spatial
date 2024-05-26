@@ -30,16 +30,14 @@ namespace Fluxera.Spatial.JsonNet
 			{
 				JObject item = JObject.Load(reader);
 
-				if(item.ContainsKey("type"))
+				if(item.TryGetValue("type", out JToken typeToken))
 				{
-					string type = item["type"].Value<string>();
+					string type = typeToken.Value<string>();
 					if(type == "Point")
 					{
-						if(item.ContainsKey("coordinates"))
+						if(item.TryGetValue("coordinates", out JToken coordinatesToken))
 						{
-							JToken coordinates = item["coordinates"];
-
-							Position position = coordinates.CreateReader().ReadPosition();
+							Position position = coordinatesToken.CreateReader().ReadPosition();
 							return new Point(position);
 						}
 					}

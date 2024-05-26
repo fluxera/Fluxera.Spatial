@@ -15,7 +15,7 @@
 		{
 			ConventionPack pack = new ConventionPack();
 			pack.UseSpatial();
-			ConventionRegistry.Register("ConventionPack", pack, t => true);
+			ConventionRegistry.Register("ConventionPack", pack, _ => true);
 		}
 
 		/// <inheritdoc />

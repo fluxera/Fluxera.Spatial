@@ -16,6 +16,8 @@
 		/// <returns></returns>
 		public static BsonMapper UseSpatial(this BsonMapper mapper)
 		{
+			Guard.ThrowIfNull(mapper);
+
 			mapper.RegisterType(typeof(Point),
 				PointSerializer.Serialize,
 				PointSerializer.Deserialize);

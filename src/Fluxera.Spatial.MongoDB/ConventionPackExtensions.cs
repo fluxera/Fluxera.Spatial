@@ -16,6 +16,8 @@
 		/// <returns></returns>
 		public static ConventionPack UseSpatial(this ConventionPack pack)
 		{
+			Guard.ThrowIfNull(pack);
+
 			pack.Add(new SpatialConvention());
 
 			return pack;
