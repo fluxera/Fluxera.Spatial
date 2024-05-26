@@ -6,6 +6,8 @@
 	{
 		public static void WritePosition(this Utf8JsonWriter writer, Position position)
 		{
+			Guard.ThrowIfNull(writer);
+
 			writer.WriteStartArray();
 
 			writer.WriteNumberValue((decimal)position.Longitude);

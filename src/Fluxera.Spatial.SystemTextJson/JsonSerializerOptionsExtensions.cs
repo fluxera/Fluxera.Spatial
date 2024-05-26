@@ -18,6 +18,8 @@
 		/// <param name="options"></param>
 		public static void UseSpatial(this JsonSerializerOptions options)
 		{
+			Guard.ThrowIfNull(options);
+
 			options.Converters.Add(new PointConverter());
 			options.Converters.Add(new MultiPointConverter());
 			options.Converters.Add(new LineStringConverter());

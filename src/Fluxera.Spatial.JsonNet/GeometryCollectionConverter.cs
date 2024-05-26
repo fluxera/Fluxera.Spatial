@@ -43,14 +43,13 @@ namespace Fluxera.Spatial.JsonNet
 			{
 				JObject item = JObject.Load(reader);
 
-				if(item.ContainsKey("type"))
+				if(item.TryGetValue("type", out JToken typeToken))
 				{
-					string type = item["type"].Value<string>();
+					string type = typeToken.Value<string>();
 					if(type == "GeometryCollection")
 					{
-						if(item.ContainsKey("geometries"))
+						if(item.TryGetValue("geometries", out JToken geometriesToken))
 						{
-							JToken geometriesToken = item["geometries"];
 							if(geometriesToken.Type == JTokenType.Array)
 							{
 								JArray geometriesArray = (JArray)geometriesToken;

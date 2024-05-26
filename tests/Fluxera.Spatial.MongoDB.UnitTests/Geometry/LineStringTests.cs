@@ -15,7 +15,7 @@ namespace Fluxera.Spatial.MongoDB.UnitTests.Geometry
 		{
 			ConventionPack pack = new ConventionPack();
 			pack.UseSpatial();
-			ConventionRegistry.Register("ConventionPack", pack, t => true);
+			ConventionRegistry.Register("ConventionPack", pack, _ => true);
 		}
 
 		/// <inheritdoc />

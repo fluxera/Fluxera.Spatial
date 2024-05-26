@@ -7,6 +7,8 @@
 	{
 		public static Position ReadPosition(this BsonArray coordinatesArray)
 		{
+			Guard.ThrowIfNull(coordinatesArray);
+
 			if(coordinatesArray.Count >= 2)
 			{
 				BsonValue[] values = coordinatesArray.Values.ToArray();

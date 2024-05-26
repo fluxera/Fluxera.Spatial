@@ -22,7 +22,13 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Fluxera.Guards" Version="8.0.*" />
+		<InternalsVisibleTo Include="Fluxera.Spatial.JsonNet" />
+		<InternalsVisibleTo Include="Fluxera.Spatial.LiteDB" />
+		<InternalsVisibleTo Include="Fluxera.Spatial.MongoDB" />
+		<InternalsVisibleTo Include="Fluxera.Spatial.SystemTextJson" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="GitVersion.MsBuild" Version="5.12.0">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
