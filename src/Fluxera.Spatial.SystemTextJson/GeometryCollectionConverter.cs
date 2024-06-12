@@ -1,4 +1,5 @@
-﻿namespace Fluxera.Spatial.SystemTextJson
+﻿// ReSharper disable PossibleNullReferenceException
+namespace Fluxera.Spatial.SystemTextJson
 {
 	using System;
 	using System.Collections.Generic;

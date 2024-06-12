@@ -1,3 +1,4 @@
+// ReSharper disable AssignNullToNotNullAttribute
 namespace Fluxera.Spatial.JsonNet
 {
 	using System;
